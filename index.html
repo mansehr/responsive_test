@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<style type="text/css">
+.iphone5 {
+	width: 320px;
+	height: 568px
+}
+
+.ipad_landscape {
+	width: 1024px;
+	height: 768px
+}
+
+.ipad_portrait {
+	width: 768px;
+	height: 1024px
+}
+
+.samsungGalaxyS4 {
+	width: 360px;
+	height: 640px
+}
+
+iframe {
+	border: 10px solid black;
+  border-radius: 26px;
+  background-color: darkgrey;
+  padding: 18px 3px;
+}
+
+
+</style></head>
+<body>
+
+http://<input type="text" id="url" placeholder="Enter URL"/>
+<input type="button" onclick="loadpage(getInputUrl())" value="GO!" />
+<p>
+<a href="" id="view_full_page" target="_blank">Se hela sidan i ny tab</a>
+</p>
+<p>Iphone 5 (320x568)</p>
+<iframe src="" class="iphone5">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+<p>Samsung Galaxy S4 (360x640)</p>
+<iframe src="" class="samsungGalaxyS4">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+<p>Ipad st&aring;ende (768x1024), b&aring;de mini och vanliga</p>
+<iframe src="" class="ipad_portrait">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+<p>Ipad liggande (1024x768).</p>
+<iframe src="" class="ipad_landscape">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+</body>
+<script type="text/javascript">
+	var loadpage = function(page) {
+		$('iframe').attr('src', page);
+		$('#view_full_page').attr('href', page);
+	}
+  var getInputUrl = function() {
+		return 'http://'+$('input#url').val();
+	}
+</script>
+
+</html>
